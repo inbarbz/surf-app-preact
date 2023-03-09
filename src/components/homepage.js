@@ -20,7 +20,7 @@ export default class HomePage extends Component {
 
 	locations = {
 		Brighton: { latitude: 50.83, longitude: -0.14 },
-		OtherPlace: { latitude: 50.83, longitude: -0.14 },
+		OtherPlace: { latitude: 50.83, longitude: -0.14 }
 	};
 
 	fetchSurfData(locationName) {
@@ -46,7 +46,7 @@ export default class HomePage extends Component {
 		if (this.state.isLoaded) {
 			console.log(
 				"this.state.daily.wave_height_max[0] is " +
-					this.state.daily.wave_height_max[0]
+				this.state.daily.wave_height_max[0]
 			);
 			return this.state.daily.wave_height_max[0];
 		} else {
@@ -68,7 +68,7 @@ export default class HomePage extends Component {
 			<div class="container home-page-background">
 				<div class="row">
 					<div class="col">
-						<NavBarX />
+						<TopNavBar />
 					</div>
 				</div>
 				<div class="row">

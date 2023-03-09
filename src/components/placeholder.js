@@ -9,6 +9,6 @@ export class PlaceHolder extends Component {
 
 	divStyles = {
 		boder: "solid",
-		borderWidth: "2px",
+		borderWidth: "2px"
 	};
 }
