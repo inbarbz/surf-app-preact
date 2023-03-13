@@ -38,7 +38,7 @@ export default class HomePage extends Component {
 			})
 			.then((result) => {
 				console.log(result);
-				this.setState({ isLoaded: true, daily: result.daily });
+				this.setState({ isLoaded: true, daily: result.daily, hourly: result.hourly });
 			});
 	}
 
@@ -51,6 +51,18 @@ export default class HomePage extends Component {
 			return this.state.daily.wave_height_max[0];
 		} else {
 			return 0;
+		}
+	}
+
+	getWaveHeightHourly() {
+		if (this.state.isLoaded) {
+			console.log(
+				"this.state.hourly.swell_wave_height is " +
+				this.state.hourly.swell_wave_height
+			);
+			return this.state.hourly.swell_wave_height;
+		} else {
+			return new Array(24).fill(0);
 		}
 	}
 
@@ -81,6 +93,7 @@ export default class HomePage extends Component {
 						<LowerWeatherData
 							wave_height={this.getWaveHeight()}
 							wave_direction={this.getWaveDirection()}
+							wave_height_hourly={this.getWaveHeightHourly()}
 						/>
 					</div>
 				</div>
