@@ -4,7 +4,7 @@ import { h, Component } from "preact";
 import { TopNavBar } from "./topnavbar";
 import { UpperWeatherData } from "./upperweatherdata";
 import { LowerWeatherData } from "./lowerweatherdata";
-import { PlaceHolder } from "./placeholder";
+// import { PlaceHolder } from "./placeholder";
 
 export default class HomePage extends Component {
 	constructor() {
