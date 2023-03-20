@@ -18,6 +18,8 @@ export default class HomePage extends Component {
 		this.fetchSurfData("Brighton");
 	}
 
+
+
 	locations = {
 		Brighton: { latitude: 50.83, longitude: -0.14 },
 		OtherPlace: { latitude: 50.83, longitude: -0.14 }
@@ -69,7 +71,13 @@ export default class HomePage extends Component {
 				<div class="row">
 					<div class="col">
 						<TopNavBar />
-					</div>
+		Brighton			</div>
+				</div>
+
+				<div>
+				<button>
+					Next page
+				</button>
 				</div>
 				<div class="row">
 					<div class="col">
