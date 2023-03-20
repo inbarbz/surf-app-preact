@@ -71,13 +71,14 @@ export default class HomePage extends Component {
 				<div class="row">
 					<div class="col">
 						<TopNavBar />
-		Brighton			</div>
+							Brighton			
+					</div>
 				</div>
 
 				<div>
-				<button>
-					Next page
-				</button>
+					<button>
+						Next page
+					</button>
 				</div>
 				<div class="row">
 					<div class="col">

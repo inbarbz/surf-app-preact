@@ -4,7 +4,7 @@ export class WaterTemp extends Component {
 	render() {
 		let label = this.props.label ? this.props.label : "EMPTY";
 		console.log("Render WaterTemp() with label = " + label);
-		return <div style={this.divStyles}>Place Holder for: {label}</div>;
+		// return <div style={this.divStyles}>Place Holder for: {label}</div>;
 	}
 
 	divStyles = {

@@ -1,6 +1,5 @@
 // import preact
 import { h, Component } from "preact";
-import 'preact-material-components/Button/style.css';
 import { TopNavBar } from "./topnavbar";
 import { UpperWeatherData } from "./upperweatherdata";
 import { LowerWeatherData } from "./lowerweatherdata";
@@ -86,7 +85,7 @@ export default class HomePage extends Component {
 
 				<div>
 					<button>
-						Hello
+						Next page
 					</button>
 				</div>
 				<div class="row">

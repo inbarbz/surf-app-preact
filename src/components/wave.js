@@ -68,7 +68,7 @@ export class Wave extends Component {
 
 		return (
 			<div style={this.divStyles}>
-				Place Holder for: {label}
+				{/* Place Holder for: {label} */}
 				<canvas id="wave-graph" width="70%" height="100"></canvas>
 			</div>
 		);
