@@ -84,8 +84,8 @@ export default class HomePage extends Component {
 				</div>
 
 				<div>
-					<button>
-						Next page
+					<button onClick={"locztion.href = 'location.js'"}>
+						Location
 					</button>
 				</div>
 				<div class="row">
