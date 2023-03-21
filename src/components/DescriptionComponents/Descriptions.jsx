@@ -6,7 +6,8 @@ import { BiHappy } from 'react-icons/bi';
 import { MdCompress, MdOutlineWaterDrop } from 'react-icons/md';
 
 
-const Descriptions = ({weather, units}) => {
+const Descriptions = (props) => {
+    props = {weather, units}
 
     const tempUnit = units === 'metric' ? '°C' : '°F';
     const windUnit = units === 'metric' ? 'm/s' : 'm/h';
