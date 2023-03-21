@@ -1,13 +1,12 @@
-import { h, useState } from 'preact';
-import './descriptions.css';
+import { h } from 'preact'
+import './descriptions.css'
 
-import { AiOutlineArrowUp, AiOutlineArrowDown, AiOutlineWind } from 'react-icons/fa';
+import { FaArrowUp, FaArrowDown, FaWind } from 'react-icons/fa';
 import { BiHappy } from 'react-icons/bi';
 import { MdCompress, MdOutlineWaterDrop } from 'react-icons/md';
 
 
-const Descriptions = (props) => {
-    const {weather, units} = props;
+const Descriptions = ({weather, units}) => {
 
     const tempUnit = units === 'metric' ? '°C' : '°F';
     const windUnit = units === 'metric' ? 'm/s' : 'm/h';
@@ -15,46 +14,46 @@ const Descriptions = (props) => {
     const cards = [
         {
             id: 1,
-            icon: <AiOutlineArrowDown />,
+            icon: <FaArrowDown />,
             title: "min",
             data: weather.temp_min.toFixed(),
             unit: tempUnit,
         },
         {
             id: 2,
-            icon: <AiOutlineArrowUp />,
+            icon: <FaArrowUp />,
             title: "max",
             data: weather.temp_max.toFixed(),
-            unit: tempUnit,
+            unit: tempUnit
         },
         {
             id: 3,
             icon: <BiHappy />,
             title: "feels like",
             data: weather.feels_like.toFixed(),
-            unit: tempUnit,
+            unit: tempUnit
         },
         {
             id: 4,
             icon: <MdCompress />,
             title: "pressure",
             data: weather.pressure,
-            unit: "hPa",
+            unit: "hPa"
         },
         {
             id: 5,
             icon: <MdOutlineWaterDrop />,
             title: "humidity",
             data: weather.humidity,
-            unit: "%",
+            unit: "%"
         },
         {
             id: 6,
-            icon: <AiOutlineWind />,
+            icon: <FaWind />,
             title: "wind speed",
             data: weather.speed.toFixed(),
-            unit: windUnit,
-        },
+            unit: windUnit
+        }
     ];
 
 
