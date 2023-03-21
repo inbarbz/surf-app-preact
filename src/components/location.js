@@ -1,14 +1,12 @@
-import { h, Fragment } from 'preact';
-import { useEffect, useState } from 'preact/hooks';
-import hotBg from './images/sunny.jpg';
-import coldBg from './images/snowy.jpg';
-import { getFormattedWeatherData } from './weatherService';
-import { Descriptions } from 'DescriptionComponents/Descriptions';
-import { Location } from 'preact-router';
+import {h, useEffect, useState } from 'preact/hooks'
+import hotBg from './images/sunny.jpg'
+import coldBg from './images/snowy.jpg'
+import Descriptions from './DescriptionComponents/Descriptions'
+import { getFormattedWeatherData } from './weatherService'
 
 
 
-export default function Location() {
+export default function App() {
 
   const [city, setCity] = useState("Paris");
   const [weather, setWeather] = useState(null);
@@ -34,10 +32,10 @@ export default function Location() {
 
   const handleUnitsClick = (e) => {
     const button = e.currentTarget;
-    const currentUnit = button.innerText.slice(1);
+    const currentUnit = button.textContent.slice(1);
 
     const isCelsius = currentUnit === 'C';
-    button.innerText = isCelsius ? '°F' : '°C';
+    button.textContent = isCelsius ? '°F' : '°C';
     setUnits(isCelsius ? 'metric' : 'imperial')
   };
 
@@ -50,23 +48,23 @@ export default function Location() {
 
 
   return (
-    <div className='app' style={{backgroundImage: `url(${bg})`}}>
-      <div className="overlay">
+    <div class='app' style={{backgroundImage: `url(${bg})`}}>
+      <div class="overlay">
         {
           weather && (
-            <div className="container">
-              <div className="section section__inputs">
-                <input onKeyDown={(e) => enterKeyPressed(e)} type="text" name="city" placeholder='Enter City...' />
+            <div class="container">
+              <div class="section section__inputs">
+                <input onKeyPress={(e) => enterKeyPressed(e)} type="text" name="city" placeholder='Enter City...' />
                 <button onClick={(e) => handleUnitsClick(e)}>°F</button>
               </div>
 
-              <div className="section section__temperature">
-                <div className="icon">
+              <div class="section section__temperature">
+                <div class="icon">
                   <h3>{ `${weather.name}, ${weather.country}` }</h3>
-                  <img src={weather.iconURL} alt="weatherIcon" />
+                  <img srcset={weather.iconURL} alt="weatherIcon" />
                   <h3>{weather.description}</h3>
                 </div>
-                <div className="temperature">
+                <div class="temperature">
                   <h1>{ `${weather.temp.toFixed()} °${units === 'metric' ? 'C' : 'F'}` }</h1>
                 </div>
               </div>

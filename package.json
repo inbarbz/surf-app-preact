@@ -74,7 +74,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
-    "preact": "^6.0.0",
+    "preact": "^6.4.0",
     "preact-compat": "^3.0.0",
     "preact-router": "^2.0.0",
     "promise-polyfill": "^6.0.2",
