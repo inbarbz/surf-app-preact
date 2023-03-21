@@ -37,5 +37,5 @@ control-c
 # Key Javascript packages & APIs in use
 - Boostrap (for styling and layout). see https://getbootstrap.com/
 - ChartJS (for the charts). see https://www.chartjs.org/
-- Web API https://marine-api.open-meteo.com for the weather data
+- Web API https://marine-api.open-meteo.com for the weather datanp
 - 
