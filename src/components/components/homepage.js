@@ -77,7 +77,7 @@ export default class HomePage extends Component {
 
 				<div>
 					<button>
-						Next page
+						L
 					</button>
 				</div>
 				<div class="row">

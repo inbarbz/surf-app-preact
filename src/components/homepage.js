@@ -5,6 +5,13 @@ import { UpperWeatherData } from "./upperweatherdata";
 import { LowerWeatherData } from "./lowerweatherdata";
 // import { PlaceHolder } from "./placeholder";
 
+const redirectBtn = document.getElementById('redirect-btn');
+
+function handleClick() {
+	navigate('location.js');
+  }
+  
+
 export default class HomePage extends Component {
 	constructor() {
 		super();
@@ -84,8 +91,8 @@ export default class HomePage extends Component {
 				</div>
 
 				<div>
-					<button onClick={"locztion.href = 'location.js'"}>
-						Location
+					<button onClick={handleClick}>
+						Locatio
 					</button>
 				</div>
 				<div class="row">
