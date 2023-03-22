@@ -19,11 +19,11 @@ Open a terminal (in the project folder) and run:
 # Running Dev server
 open a terminal window in your Visual Code IDE and execute the command:
 <br/>
-<code>
-npm run dev 
-</code>
+<code>npm run dev</code>
 
 (and open a browser http://localhost:8080)
+
+Open developer tools and select iPhone 12 Pro
 
 # Stop the Dev server
 in the terminal window press the key combination:
