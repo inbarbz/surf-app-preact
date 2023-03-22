@@ -14,7 +14,7 @@ export default class HomePage extends Component {
 		this.cityName = "Brighton".toLowerCase();
 		this.weatherAPI = null;
 	}
-
+	//e
 	locations = {
 		brighton: { latitude: 50.83, longitude: -0.14 },
 		otherplace: { latitude: 50.83, longitude: -0.14 },
@@ -78,7 +78,7 @@ export default class HomePage extends Component {
 		if (this.state.isLoaded) {
 			console.log(
 				"this.state.daily.wave_height_max[0] is " +
-					this.state.daily.wave_height_max[0]
+				this.state.daily.wave_height_max[0]
 			);
 			return this.state.daily.wave_height_max[0];
 		} else {
