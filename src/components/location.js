@@ -1,5 +1,9 @@
 import { h, Component } from "preact";
+import { useState, useEffect } from 'preact/hooks';
 import { Descriptions } from "./DescriptionComponents/Descriptions";
+import { getFormattedWeatherData } from './weatherService'
+import { hotBg } from "../assets/sunny.jpg";
+import { coldBg } from "../assets/snowy.jpg";
 
 
 
