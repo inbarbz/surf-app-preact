@@ -1,10 +1,10 @@
 // import preact
 import { h, Component } from "preact";
+
 import { TopNavBar } from "./topnavbar";
 import { UpperWeatherData } from "./upperweatherdata";
 import { LowerWeatherData } from "./lowerweatherdata";
 // import { PlaceHolder } from "./placeholder";
-
 
 export default class HomePage extends Component {
 	constructor() {
@@ -18,9 +18,11 @@ export default class HomePage extends Component {
 		this.fetchSurfData("Brighton");
 	}
 
+
+
 	locations = {
 		Brighton: { latitude: 50.83, longitude: -0.14 },
-		OtherPlace: { latitude: 50.83, longitude: -0.14 },
+		OtherPlace: { latitude: 50.83, longitude: -0.14 }
 	};
 
 	fetchSurfData(locationName) {
@@ -38,11 +40,7 @@ export default class HomePage extends Component {
 			})
 			.then((result) => {
 				console.log(result);
-				this.setState({
-					isLoaded: true,
-					daily: result.daily,
-					hourly: result.hourly,
-				});
+				this.setState({ isLoaded: true, daily: result.daily });
 			});
 	}
 
@@ -58,27 +56,11 @@ export default class HomePage extends Component {
 		}
 	}
 
-	getWaveHeightHourly() {
+	getWaveDirection() {
 		if (this.state.isLoaded) {
-			console.log(
-				"this.state.hourly.swell_wave_height is " +
-				this.state.hourly.swell_wave_height
-			);
-			return this.state.hourly.swell_wave_height;
+			return this.state.daily.wave_direction_dominant[0];
 		} else {
-			return new Array(24).fill(0);
-		}
-	}
-
-	getWaveDirectionHourly() {
-		if (this.state.isLoaded) {
-			console.log(
-				"this.state.hourly.wave_direction is " +
-				this.state.hourly.wave_direction
-			);
-			return this.state.hourly.wave_direction;
-		} else {
-			return new Array(24).fill(0);
+			return 0;
 		}
 	}
 
@@ -89,11 +71,15 @@ export default class HomePage extends Component {
 				<div class="row">
 					<div class="col">
 						<TopNavBar />
+							Brighton			
 					</div>
 				</div>
 
 				<div>
-					<button>Locatio</button>
+					<button>
+						Lo
+					</button>
+					<p>hi</p>
 				</div>
 				<div class="row">
 					<div class="col">
@@ -104,8 +90,7 @@ export default class HomePage extends Component {
 					<div class="col">
 						<LowerWeatherData
 							wave_height={this.getWaveHeight()}
-							wave_height_hourly={this.getWaveHeightHourly()}
-							wave_direction_hourly={this.getWaveDirectionHourly()}
+							wave_direction={this.getWaveDirection()}
 						/>
 					</div>
 				</div>
