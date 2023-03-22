@@ -1,4 +1,4 @@
-import { h } from 'preact'
+import { h, render } from 'preact'
 import './descriptions.css'
 
 import { FaArrowUp, FaArrowDown, FaWind } from 'react-icons/fa';

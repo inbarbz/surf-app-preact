@@ -1,5 +1,4 @@
 import { h, Component } from "preact";
-
 import { WeatherIndex } from "./weatherindex";
 import { Location } from "./location";
 
