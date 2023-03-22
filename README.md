@@ -32,7 +32,7 @@ control-c
 
 # Home page components
 
-![Home page Components](homePageComponents.png "React Components").
+![Home page Components](homePageComponents.png "React Components")
 
 # Key Javascript packages & APIs in use
 - Boostrap (for styling and layout). see https://getbootstrap.com/
