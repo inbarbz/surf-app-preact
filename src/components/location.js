@@ -1,6 +1,7 @@
 import { h, Component } from "preact";
+import { Descriptions } from "./DescriptionComponents/Descriptions";
 
-<<<<<<< HEAD
+
 
 export class Location extends Component {
   render() {
@@ -76,16 +77,6 @@ export class Location extends Component {
     )
   }
 };
-=======
-export class Location extends Component {
-	render() {
-		console.log("Render Location");
-		let location = this.props.location;
-		return (
-			<div class="container localtion" style="font-size:30px;">
-				{location}
-			</div>
-		);
-	}
-}
->>>>>>> c1a75a225bed3734a0d8e5c095eab495ce67efc5
+
+
+
