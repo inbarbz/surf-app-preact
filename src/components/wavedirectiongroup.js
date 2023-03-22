@@ -8,7 +8,7 @@ export class WaveDirectionGroup extends Component {
 
 		let currentHour = new Date().getHours();
 		let labels = [];
-		for (let i = 0; i < 6; i++) {
+		for (let i = 0; i < 4; i++) {
 			//labels.push((currentHour + i).toString() + ":00");
 			labels.push(
 				currentHour + i < 12
@@ -21,7 +21,8 @@ export class WaveDirectionGroup extends Component {
 
 		let cid = 1;
 		return (
-			<div class="row">
+			<div class="row" style="padding-top:5px">
+				<div class="col-4"> </div>
 				{labels.map((label) => {
 					return (
 						<div class="col-2">

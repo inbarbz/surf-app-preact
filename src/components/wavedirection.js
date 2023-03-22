@@ -14,9 +14,9 @@ export class WaveDirection extends Component {
 		// Grab the compass element
 		let compass_canvas = `compass_canvas_${this.props.cid}`;
 		this.state.canvas = document.getElementById(compass_canvas);
-		console.log(
-			`WaveDirection component_id=${component_id} canvas=${this.state.canvas}`
-		);
+		// console.log(
+		// 	`WaveDirection component_id=${component_id} canvas=${this.state.canvas}`
+		// );
 
 		// Canvas supported?
 		if (this.state.canvas.getContext("2d")) {
@@ -59,14 +59,6 @@ export class WaveDirection extends Component {
 		var width = (image.width * scale_factor) / factor;
 		var height = (image.height * scale_factor) / factor;
 
-		console.log(
-			`drawImageRotated canvas.width=${canvas.width}, canvas.height=${canvas.height}, x=${x}, y=${y}`
-		);
-
-		console.log(
-			`drawImageRotated width=${width}, height=${height}, rotate=${angle}, factor=${factor}, centered=${centered}`
-		);
-
 		var angleInRadians = angle * (Math.PI / 180);
 
 		var context = this.state.ctx;
@@ -86,7 +78,9 @@ export class WaveDirection extends Component {
 	}
 
 	render() {
-		console.log(`Render WaveDirection with componenr=${this.props.cid}`);
+		let componentWidth = 50;
+		let componentHeight = 50;
+
 		let degrees = parseInt(this.props.angle);
 		let hour = this.props.hour;
 		let cid = this.props.cid;
@@ -102,8 +96,8 @@ export class WaveDirection extends Component {
 				0,
 				1.0,
 				false,
-				80,
-				80
+				componentWidth,
+				componentHeight
 			);
 			this.drawImageRotated(
 				this.state.needle,
@@ -111,17 +105,16 @@ export class WaveDirection extends Component {
 				degrees,
 				1.0,
 				true,
-				80,
-				80
+				componentWidth,
+				componentHeight
 			);
-		} else {
-			console.log("ctx is NULL");
 		}
 
 		let compass_canvas = `compass_canvas_${cid}`;
+		let style = `width:${componentWidth}px;height:${componentHeight}px`;
 		return (
 			<div class="container wavedirection_container_div">
-				<canvas id={compass_canvas} style="width:80px;height:80px"></canvas>
+				<canvas id={compass_canvas} style={style}></canvas>
 				<div class="wavedirection_hour">{hour}</div>
 			</div>
 		);
