@@ -19,7 +19,7 @@ export default class HomePage extends Component {
 
 	locations = {
 		Brighton: { latitude: 50.83, longitude: -0.14 },
-		OtherPlace: { latitude: 50.83, longitude: -0.14 }
+		OtherPlace: { latitude: 50.83, longitude: -0.14 },
 	};
 
 	fetchSurfData(locationName) {
@@ -37,7 +37,11 @@ export default class HomePage extends Component {
 			})
 			.then((result) => {
 				console.log(result);
-				this.setState({ isLoaded: true, daily: result.daily, hourly: result.hourly });
+				this.setState({
+					isLoaded: true,
+					daily: result.daily,
+					hourly: result.hourly,
+				});
 			});
 	}
 
@@ -65,11 +69,15 @@ export default class HomePage extends Component {
 		}
 	}
 
-	getWaveDirection() {
+	getWaveDirectionHourly() {
 		if (this.state.isLoaded) {
-			return this.state.daily.wave_direction_dominant[0];
+			console.log(
+				"this.state.hourly.wave_direction is " +
+				this.state.hourly.wave_direction
+			);
+			return this.state.hourly.wave_direction;
 		} else {
-			return 0;
+			return new Array(24).fill(0);
 		}
 	}
 
@@ -84,9 +92,7 @@ export default class HomePage extends Component {
 				</div>
 
 				<div>
-					<button onClick={"locztion.href = 'location.js'"}>
-						Location
-					</button>
+					<button onClick={"locztion.href = 'location.js'"}>Location</button>
 				</div>
 				<div class="row">
 					<div class="col">
@@ -97,8 +103,8 @@ export default class HomePage extends Component {
 					<div class="col">
 						<LowerWeatherData
 							wave_height={this.getWaveHeight()}
-							wave_direction={this.getWaveDirection()}
 							wave_height_hourly={this.getWaveHeightHourly()}
+							wave_direction_hourly={this.getWaveDirectionHourly()}
 						/>
 					</div>
 				</div>
