@@ -14,7 +14,7 @@ and follow the instructions
 #### Installing project packages
 Open a terminal (in the project folder) and run:
 <br/>
-<code>npm install </code>
+<code>npm install --force</code>
 
 # Running Dev server
 open a terminal window in your Visual Code IDE and execute the command:
