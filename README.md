@@ -38,4 +38,3 @@ control-c
 - Boostrap (for styling and layout). see https://getbootstrap.com/
 - ChartJS (for the charts). see https://www.chartjs.org/
 - Web API https://marine-api.open-meteo.com for the weather datanp
-- 
